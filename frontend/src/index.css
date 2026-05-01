@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0b0e14;
+  --color-surface: #0b0e14;
+  --color-primary: #a3a6ff;
+  --color-primary-dim: #6063ee;
+  --color-primary-fixed: #9396ff;
+  --color-secondary: #ac8aff;
+  --color-tertiary: #9bffce;
+  --color-error: #ff6e84;
+  --color-error-dim: #d73357;
+  --color-success: #4ade80;
+  
+  --color-surface-dim: #0b0e14;
+  --color-surface-container-lowest: #000000;
+  --color-surface-container-low: #10131a;
+  --color-surface-container: #161a21;
+  --color-surface-container-high: #1c2028;
+  --color-surface-container-highest: #22262f;
+  --color-surface-variant: #22262f;
+  
+  --color-on-surface: #ecedf6;
+  --color-on-surface-variant: #a9abb3;
+  --color-outline-variant: #45484f;
+
+  --font-manrope: "Manrope", sans-serif;
+  --font-inter: "Inter", sans-serif;
+}
+
+@layer base {
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@600;700;800;900&display=swap');
+
+  :root {
+    color-scheme: dark;
+  }
+
+  /* Light mode overrides */
+  [data-theme="light"] {
+    --color-background: #f5f7fa;
+    --color-surface: #ffffff;
+    --color-surface-dim: #e8eaed;
+    --color-surface-container-lowest: #ffffff;
+    --color-surface-container-low: #f0f2f5;
+    --color-surface-container: #e8eaed;
+    --color-surface-container-high: #dde0e4;
+    --color-surface-container-highest: #d1d5db;
+    --color-surface-variant: #e2e4e8;
+    --color-on-surface: #1a1c20;
+    --color-on-surface-variant: #5a5d65;
+    --color-outline-variant: #c4c7cc;
+
+    --color-primary: #5b5eff;
+    --color-primary-dim: #4243d5;
+    --color-secondary: #7c5aff;
+    --color-tertiary: #10b981;
+    --color-error: #ef4444;
+    --color-error-dim: #dc2626;
+    --color-success: #22c55e;
+
+    color-scheme: light;
+  }
+  
+  body {
+    background-color: var(--color-background);
+    color: var(--color-on-surface);
+    font-family: var(--font-inter);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-manrope);
+    letter-spacing: -0.04em;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    background-color: color-mix(in srgb, var(--color-surface-container) 40%, transparent);
+    backdrop-filter: blur(24px);
+    border-top: 1px solid color-mix(in srgb, var(--color-outline-variant) 15%, transparent);
+    border-left: 1px solid color-mix(in srgb, var(--color-outline-variant) 15%, transparent);
+    border-radius: 1rem;
+  }
+
+  [data-theme="light"] .glass-card {
+    background-color: color-mix(in srgb, var(--color-surface) 90%, transparent);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+    border-top: 1px solid color-mix(in srgb, var(--color-outline-variant) 30%, transparent);
+    border-left: 1px solid color-mix(in srgb, var(--color-outline-variant) 30%, transparent);
+  }
+
+  .glass-panel {
+    background-color: color-mix(in srgb, var(--color-surface-variant) 20%, transparent);
+    backdrop-filter: blur(24px);
+  }
+
+  .ghost-border {
+    border: 1px solid color-mix(in srgb, var(--color-outline-variant) 15%, transparent);
+  }
+
+  [data-theme="light"] .ghost-border {
+    border: 1px solid color-mix(in srgb, var(--color-outline-variant) 40%, transparent);
+  }
+
+  .shadow-ambient {
+    box-shadow: 0px 24px 48px -12px rgba(99, 102, 241, 0.08);
+  }
+
+  .glow-primary-hover:hover {
+    box-shadow: 0 0 20px rgba(163, 166, 255, 0.3);
+  }
+
+  /* Custom scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: color-mix(in srgb, var(--color-outline-variant) 40%, transparent);
+    border-radius: 3px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: color-mix(in srgb, var(--color-outline-variant) 60%, transparent);
+  }
+}
