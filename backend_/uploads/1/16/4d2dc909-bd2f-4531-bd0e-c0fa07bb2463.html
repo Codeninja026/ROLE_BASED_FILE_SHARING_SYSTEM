@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login / Signup</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      min-height: 100vh;
+      background: #4285f4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      padding: 40px 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 36px 32px;
+      width: 340px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+      animation: fadeUp 0.5s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .card:nth-child(2) { animation-delay: 0.1s; }
+
+    h2 {
+      text-align: center;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #1a1a2e;
+      margin-bottom: 24px;
+    }
+
+    .input-wrap {
+      margin-bottom: 14px;
+    }
+
+    input[type="email"],
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 13px 16px;
+      border: 1.5px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      color: #333;
+      background: #fafafa;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    input:focus {
+      border-color: #4285f4;
+      background: #fff;
+    }
+
+    input::placeholder { color: #aaa; }
+
+    .forgot {
+      text-align: right;
+      margin-bottom: 18px;
+    }
+
+    .forgot a {
+      font-size: 0.88rem;
+      color: #4285f4;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .btn-primary {
+      width: 100%;
+      padding: 13px;
+      background: #4285f4;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      margin-bottom: 14px;
+    }
+
+    .btn-primary:hover { background: #3367d6; }
+    .btn-primary:active { transform: scale(0.98); }
+
+    .switch-text {
+      text-align: center;
+      font-size: 0.88rem;
+      color: #666;
+      margin-bottom: 18px;
+    }
+
+    .switch-text a {
+      color: #4285f4;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      color: #bbb;
+      font-size: 0.85rem;
+    }
+
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #e5e5e5;
+    }
+
+    .btn-social {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 8px;
+      border: 1.5px solid #e0e0e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.1s;
+      margin-bottom: 10px;
+    }
+
+    .btn-social:active { transform: scale(0.98); }
+
+    .btn-facebook {
+      background: #3b5998;
+      color: #fff;
+      border-color: #3b5998;
+    }
+
+    .btn-facebook:hover { opacity: 0.9; }
+
+    .btn-google {
+      background: #fff;
+      color: #444;
+    }
+
+    .btn-google:hover { background: #f5f5f5; }
+
+    @media (max-width: 720px) {
+      body { flex-direction: column; gap: 20px; }
+      .card { width: 100%; max-width: 360px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LOGIN CARD -->
+  <div class="card" id="login-card">
+    <h2>Login</h2>
+
+    <div class="input-wrap">
+      <input type="email" placeholder="Email" />
+    </div>
+
+    <div class="input-wrap">
+      <input type="password" placeholder="Password" />
+    </div>
+
+    <div class="forgot"><a href="#">Forgot password?</a></div>
+
+    <button class="btn-primary">Login</button>
+
+    <p class="switch-text">Don't have an account? <a href="#" onclick="showSignup()">Signup</a></p>
+
+    <div class="divider">Or</div>
+
+    <button class="btn-social btn-facebook">
+      Login with Facebook
+    </button>
+
+    <button class="btn-social btn-google">
+      Login with Google
+    </button>
+  </div>
+
+  <!-- SIGNUP CARD -->
+  <div class="card" id="signup-card">
+    <h2>Signup</h2>
+
+    <div class="input-wrap">
+      <input type="email" placeholder="Email" />
+    </div>
+
+    <div class="input-wrap">
+      <input type="password" placeholder="Create password" />
+    </div>
+
+    <div class="input-wrap">
+      <input type="password" placeholder="Confirm password" />
+    </div>
+
+    <button class="btn-primary" style="margin-top:4px;">Signup</button>
+
+    <p class="switch-text">Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+
+    <div class="divider">Or</div>
+
+    <button class="btn-social btn-facebook">
+      Login with Facebook
+    </button>
+
+    <button class="btn-social btn-google">
+      Login with Google
+    </button>
+  </div>
+
+  <script>
+    function showSignup() {
+      if (window.innerWidth <= 720) {
+        document.getElementById('login-card').style.display = 'none';
+        document.getElementById('signup-card').style.display = 'block';
+      }
+    }
+
+    function showLogin() {
+      if (window.innerWidth <= 720) {
+        document.getElementById('signup-card').style.display = 'none';
+        document.getElementById('login-card').style.display = 'block';
+      }
+    }
+  </script>
+
+</body>
+</html>

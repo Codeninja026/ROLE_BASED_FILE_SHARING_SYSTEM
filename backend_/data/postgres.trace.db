@@ -1,0 +1,18 @@
+2026-04-10 17:55:29.311644+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PG_DATABASE" not found (this database is empty); SQL statement:
+SELECT 1 FROM pg_database WHERE datname = 'sharevault-dev;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE' [42104-224]
+2026-04-10 18:15:49.797160+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PG_DATABASE" not found (this database is empty); SQL statement:
+SELECT 1 FROM pg_database WHERE datname = 'sharevault-dev;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE' [42104-224]
+2026-04-10 19:14:18.122483+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PG_DATABASE" not found (this database is empty); SQL statement:
+SELECT 1 FROM pg_database WHERE datname = 'vento-dev;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE' [42104-224]
+2026-04-10 19:33:29.686785+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PG_DATABASE" not found (this database is empty); SQL statement:
+SELECT 1 FROM pg_database WHERE datname = 'vento-dev;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE' [42104-224]
+2026-04-13 19:19:34.406238+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PG_DATABASE" not found (this database is empty); SQL statement:
+SELECT 1 FROM pg_database WHERE datname = 'vento-dev;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE' [42104-224]
+2026-04-13 19:28:04.317806+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PG_DATABASE" not found (this database is empty); SQL statement:
+SELECT 1 FROM pg_database WHERE datname = 'vento-dev;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE' [42104-224]
