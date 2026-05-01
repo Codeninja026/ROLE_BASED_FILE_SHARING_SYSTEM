@@ -1,6 +1,6 @@
-# Vento Enterprise - Secure Role-Based File Sharing System
+#  RBFS - Secure Role-Based File Sharing System
 
-Vento is a production-grade enterprise file management and sharing platform built with Spring Boot, React, and PostgreSQL. It features strict data isolation, comprehensive audit logging, and modern aesthetic design.
+RBFS is a production-grade enterprise file management and sharing platform built with Spring Boot, React, and PostgreSQL. It features strict data isolation, comprehensive audit logging, and modern aesthetic design.
 
 ## 🚀 Priority Setup & Login
 
